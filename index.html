@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aile Sohbet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="auth" class="screen">
+    <div class="card">
+      <h1>Aile Sohbet</h1>
+      <input id="name" type="text" placeholder="Adın (sadece kayıt olurken)" />
+      <input id="email" type="email" placeholder="E-posta" />
+      <input id="password" type="password" placeholder="Şifre" />
+      <button id="loginBtn">Giriş Yap</button>
+      <button id="registerBtn">Kayıt Ol</button>
+      <p id="authMsg"></p>
+    </div>
+  </div>
+
+  <div id="chat" class="screen hidden">
+    <header>
+      <div>
+        <h1>Aile Grubu</h1>
+        <small id="whoami"></small>
+      </div>
+      <button id="logoutBtn">Çıkış</button>
+    </header>
+
+    <main id="messages"></main>
+
+    <div id="editingBar" class="hidden">
+      <span>Mesajı düzenliyorsun</span>
+      <button id="cancelEdit" type="button">Vazgeç</button>
+    </div>
+
+    <form id="sendForm">
+      <button type="button" id="photoBtn" title="Fotoğraf gönder">📷</button>
+      <input type="file" id="photoInput" accept="image/*" hidden />
+      <button type="button" id="voiceBtn" title="Sesli mesaj">🎤</button>
+      <input id="msgInput" type="text" placeholder="Mesaj yaz..." autocomplete="off" />
+      <button type="submit" title="Gönder">➤</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
